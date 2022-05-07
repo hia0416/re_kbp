@@ -1,0 +1,1533 @@
+@import "./kbp_common.scss";
+
+body {
+  font-family: "Fahkwang", "Noto sans KR", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  word-break: keep-all;
+  background: $bgcolor;
+  color: #222;
+
+  @include respond($mobile767) {
+    font-size: 14px;
+  }
+}
+
+.innerBox {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+
+  font: {
+    size: 2em;
+    family: "Roboto Slab";
+  }
+
+  @include respond($mobile480) {
+    font-size: 1.5em;
+  }
+}
+
+.moreBox {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  text-align: center;
+  transition: all .3s;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+
+  @include respond($mobile767) {
+    width: 80px;
+    height: 40px;
+    top: 30px;
+  }
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+
+    p {
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      box-sizing: border-box;
+      margin: 5px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: .9em;
+      line-height: 28px;
+      transition: all .5s;
+    }
+  }
+
+  &:hover {
+    background: #333;
+
+    a {
+      p {
+        border: 1px dashed #aaa;
+        color: white;
+      }
+    }
+  }
+}
+
+.arrow {
+  .leftBtn {
+    width: 40px;
+    height: 50px;
+    background: url(../images/left_arrow.svg) no-repeat center center;
+    position: absolute;
+    cursor: pointer;
+    transition: .5s;
+
+    @include respond($mobile767) {
+      height: 40px;
+    }
+  }
+
+  .rightBtn {
+    width: 40px;
+    height: 50px;
+    background: url(../images/right_arrow.svg) no-repeat center center;
+    position: absolute;
+    cursor: pointer;
+    transition: .5s;
+
+    @include respond($mobile767) {
+      height: 40px;
+    }
+  }
+}
+
+.pName {
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.price {
+  padding-top: 5px;
+  font-size: .9em;
+}
+
+// header
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background: $bgcolor;
+
+  .headerPopup {
+    background: #fff;
+    text-align: center;
+    position: relative;
+    display: block;
+
+    span {
+      font-size: .8em;
+      line-height: 30px;
+
+      &.closeBtn {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        bottom: 5px;
+        background-image: url(../images/close.svg);
+        background-repeat: no-repeat;
+        background-size: 13px;
+        background-position: center center;
+        padding: 0 20px 0 0;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  .hamBtn {
+    width: 20px;
+    position: absolute;
+    top: 22px;
+    display: none;
+
+    @include respond($tabwidth) {
+      display: block;
+    }
+  }
+
+  .logo {
+    width: 250px;
+    height: 80px;
+    margin: 10px auto 0;
+
+    @include respond($tabwidth) {
+      width: 200px;
+      height: 60px;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      img {
+        margin-top: 20px;
+        width: 100%;
+
+        @include respond($tabwidth) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .gnb {
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    @include respond($tabwidth) {
+      display: none;
+    }
+
+    >li {
+      float: left;
+      margin-left: 20px;
+      font-size: .8em;
+      line-height: 30px;
+
+      a {
+        color: #111;
+        font-weight: 600;
+      }
+
+      img {
+        height: 23px;
+      }
+
+      &.langBtn {
+        position: relative;
+
+        .lang {
+          width: 150px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+          background: white;
+          border-radius: 15px;
+          border: 1px dashed #555;
+          display: none;
+
+          li {
+            width: 33.3%;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: block;
+              font-size: .9em;
+            }
+
+            &:hover {
+              a {
+                color: goldenrod;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    text-align: center;
+    position: relative;
+
+    @include respond($tabwidth) {
+      text-align: left;
+      width: 80%;
+      height: 100vh;
+      padding: 30px;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      background: #F1E5D0;
+    }
+
+    .closeBtn {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      display: none;
+
+      @include respond($tabwidth) {
+        display: block;
+      }
+    }
+
+    .gnbMobile {
+      float: right;
+      margin-bottom: 20px;
+      display: none;
+
+      @include respond($tabwidth) {
+        display: block;
+      }
+
+      >li {
+        float: left;
+        margin: 5px;
+        font-size: 12px;
+
+        img {
+          height: 20px;
+        }
+
+        &.m_lang {
+          .m_lang_box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba($color: #000000, $alpha: 0.5);
+            z-index: 200;
+            display: none;
+
+            >li {
+              width: 100%;
+              height: 50px;
+              background: rgba($color: #000000, $alpha: 1.0);
+              text-align: center;
+              position: relative;
+              top: 70px;
+              border-bottom: 1px dashed #eee;
+
+              &:last-child {
+                border-bottom: 0;
+              }
+
+              a {
+                color: white;
+                font-size: 1.4em;
+                line-height: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #nav {
+      display: inline-block;
+
+      @include respond($tabwidth) {
+        display: block;
+        margin: 50px 0;
+      }
+
+      >li {
+        float: left;
+        margin: 0 10px;
+        position: relative;
+
+        @include respond($tabwidth) {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border-bottom: 1px dashed #333;
+        }
+
+        >a {
+          width: 100%;
+          height: 100%;
+          padding-bottom: 20px;
+          display: block;
+          font-weight: bold;
+          font-size: .9em;
+
+          @include respond($tabwidth) {
+            padding-bottom: 0;
+            line-height: 50px;
+            font-size: 1.2em;
+            text-indent: 10px;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #ff4500;
+          transition: .5s;
+          position: absolute;
+          left: 50%;
+          top: 20px;
+
+          @include respond($tabwidth) {
+            display: none;
+          }
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+            margin-left: -50%;
+          }
+        }
+
+        .subWrap {
+          width: 450px;
+          height: 350px;
+          box-sizing: border-box;
+          border-radius: 25px;
+          position: absolute;
+          top: 40px;
+          left: -20px;
+          background: rgba($color: #000000, $alpha: .9);
+          z-index: 10;
+          display: none;
+
+          @include respond($tabwidth) {
+            opacity: 0;
+          }
+
+          &.book,
+          &.rug {
+            width: 320px;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -24px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px;
+            border-color: transparent transparent rgba($color: #000000, $alpha: .9) transparent;
+          }
+
+          .subBox {
+            width: 96%;
+            height: 95%;
+            padding: 20px;
+            border: 2px dashed #aaa;
+            border-radius: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 2.5%;
+            left: 2%;
+
+            .subMenu {
+              >li {
+                height: 30px;
+                text-align: left;
+
+                >a {
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  color: #ddd;
+                  font-size: .9em;
+                }
+
+                &:hover {
+                  a {
+                    color: white;
+                  }
+                }
+              }
+            }
+
+            .imgBox {
+              position: absolute;
+              right: 20px;
+              top: 20px;
+
+              img {
+                max-width: 200px;
+                max-height: 300px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mobileBottom {
+      width: 100%;
+      display: none;
+
+      @include respond($tabwidth) {
+        display: block;
+      }
+
+      >ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          width: 70px;
+          height: 30px;
+          float: left;
+          border: 1px dashed #aaa;
+          border-radius: 20px;
+          text-align: center;
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            font-size: .8em;
+            line-height: 30px;
+          }
+        }
+      }
+
+      .mobileBottomInfo {
+        margin-top: 20px;
+
+        p {
+          padding: 5px 0;
+          font-size: .9em;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+// #container
+#mainBanner {
+  width: 100%;
+  height: 80vh;
+  max-height: 800px;
+  padding-top: 100px;
+  overflow: hidden;
+  position: relative;
+
+  @include respond($mobile767) {
+    height: 50vh;
+  }
+
+  .videoBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: all .7s;
+
+    video {
+      width: 100vw;
+      min-width: 700px;
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include respond($mobile767) {
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+#contents {
+  section {
+    margin: 200px auto;
+  }
+
+  .newIn {
+    .newContent {
+      padding: 30px 0;
+      transition-delay: 1s;
+
+      .contentBox {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        @include respond($mobile480) {
+          margin-bottom: 130px;
+        }
+
+        .textBox {
+          width: 50%;
+          max-width: 400px;
+          padding: 10px 20px;
+          box-sizing: border-box;
+
+          span {
+            font-size: .8em;
+          }
+
+          .detailText {
+            padding: 20px 0;
+            font-size: .9em;
+
+            @include respond($mobile480) {
+              position: absolute;
+              width: 80vw;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: -130px;
+            }
+          }
+        }
+      }
+
+      .contentImg {
+        width: 50%;
+        max-width: 300px;
+        height: 270px;
+        position: relative;
+
+        @include respond($mobile767) {
+          height: 200px;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+
+          img {
+            width: 100%;
+            max-width: 250px;
+            position: absolute;
+            right: 0;
+          }
+
+          .detailImg {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 35%;
+            left: -20px;
+            background-size: cover;
+            background-position: bottom;
+            border-radius: 50%;
+            box-shadow: 2px 3px 7px rgba($color: #000000, $alpha: 0.5);
+
+            @include respond($mobile480) {
+              width: 130px;
+              height: 130px;
+            }
+
+            @include respond($mobile360) {
+              width: 100px;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+
+    .new1 {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px dashed #ddd;
+
+      @include respond($mobile767) {
+        flex-wrap: wrap;
+      }
+
+      .pBox {
+        padding: 10px;
+        box-sizing: border-box;
+
+        @include respond($mobile767) {
+          width: 50%;
+        }
+
+        a {
+          img {
+            width: 100%;
+            max-width: 200px;
+          }
+        }
+      }
+    }
+
+    .new2 {
+      .detailImg {
+        background-image: url(../images/newin02_detail.jpg);
+      }
+    }
+
+    .new3 {
+      .detailImg {
+        background-image: url(../images/newin_detail03.jpg);
+      }
+    }
+
+    .pWideBox {
+      background: rgba($color: #eee, $alpha: .7);
+      border: 1px dashed #ccc;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      padding: 15px 0;
+
+      .pBox {
+        width: calc(100% / 6);
+        height: 350px;
+        padding: 15px;
+        box-sizing: border-box;
+
+        @include respond($tabwidth) {
+          width: calc(100% / 3);
+          height: 300px;
+        }
+
+        @include respond($mobile480) {
+          width: calc(100% / 2);
+          height: 280px;
+        }
+
+        @include respond($mobile360) {
+          height: 260px;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          font-size: .9em;
+
+          .imgWrap {
+            width: 100%;
+            height: 70%;
+            position: relative;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              max-width: 150px;
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bedding {
+    .beddingWrap {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px 0;
+      flex-wrap: wrap;
+
+      @include respond($tabwidth) {
+        justify-content: flex-start;
+      }
+
+      @include respond($mobile767) {
+        // justify-content: space-around;
+      }
+
+      .beddingContent {
+        width: 20%;
+        height: 300px;
+        max-width: 200px;
+        position: relative;
+
+        @include respond($tabwidth) {
+          width: 45%;
+          margin: 2%;
+          max-width: none;
+        }
+
+        @include respond($mobile767) {
+          width: 100%;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+
+          .contentImg {
+            width: 100%;
+            height: 100%;
+            max-width: 200px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+
+            @include respond($mobile767) {
+              margin-left: 5%;
+            }
+
+            @include respond($mobile360) {
+              margin-left: 0;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 20px;
+            }
+          }
+
+          .boxCover {
+            width: 100%;
+            height: 20%;
+            max-width: 200px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            border-radius: 0 0 20px 20px;
+            background: rgba($color: #000000, $alpha: 0.35);
+            transition: .7s;
+
+            @include respond($tabwidth) {
+              background: none;
+              left: 50%;
+              width: 50%;
+              height: 100%;
+            }
+
+            p,
+            span {
+              color: #eee;
+              padding: 10px;
+              transition: .5s;
+
+              @include respond($tabwidth) {
+                color: #333;
+                text-shadow: 0 1px 2px rgba($color: #fff, $alpha: 0.5);
+                padding: 0;
+              }
+            }
+
+            .pName {
+              @include respond($tabwidth) {
+                padding-top: 90%;
+              }
+            }
+          }
+
+          &:hover {
+            .boxCover {
+              height: 100%;
+              border-radius: 20px;
+
+              .pName {
+                padding-top: 80%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fabrics {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    >.title {
+      width: 100%;
+      height: 330px;
+      background: white;
+
+      img {
+        width: 400px;
+        padding-top: 40px;
+      }
+    }
+
+    >.arrow {
+      width: 100px;
+      position: absolute;
+      top: 50px;
+      right: 20%;
+
+      @include respond($mobile767) {
+        top: 100px;
+        width: 90%;
+        // height: 40px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .leftBtn {
+        left: 0;
+
+        &:hover {
+          left: -7px;
+        }
+      }
+
+      .rightBtn {
+        right: 0;
+
+        &:hover {
+          right: -7px;
+        }
+      }
+    }
+
+    >.moreBox {
+      top: 50px;
+      right: 5%;
+
+      @include respond($mobile767) {
+        top: 10px;
+      }
+    }
+
+    .fabricsWrap {
+      width: 100%;
+      height: 400px;
+      position: relative;
+      top: -170px;
+
+      @include respond($mobile767) {
+        height: 300px;
+      }
+
+      .slideBox {
+        width: 65%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+
+        @include respond($mobile767) {
+          width: 80%;
+          right: 10px;
+        }
+
+        .fabricsSlideWrap {
+          width: 300%;
+          height: 100%;
+          position: absolute;
+          @include respond($mobile767){
+            width: 900%;
+          }
+
+          .fabricsContent {
+            width: calc(100% / 9);
+            height: 300px;
+            float: left;
+            position: relative;
+
+            @include respond($mobile767) {
+              height: 230px;
+            }
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: block;
+
+              img {
+                width: 200px;
+                position: absolute;
+                right: 0;
+
+                @include respond($mobile767) {
+                  width: 150px;
+                }
+              }
+
+              .detailImg {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow: 2px 3px 7px rgba($color: #000000, $alpha: 0.5);
+                background-position: center center;
+                background-size: cover;
+                position: absolute;
+                left: 50%;
+                bottom: -20px;
+                transform: translateX(-50%);
+
+                @for $img from 1 through 9 {
+                  &.fabric0#{$img} {
+                    background-image: url(../images/fabric_detail0#{$img}.jpg);
+                  }
+                }
+
+                @include respond($mobile767) {
+                  width: 120px;
+                  height: 120px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .textBoxWrap {
+      position: absolute;
+      width: 30%;
+      height: 150px;
+      text-align: right;
+      top: 20%;
+      right: 65%;
+
+      @include respond($mobile767) {
+        right: 60%;
+      }
+
+      .textBox {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transition: .5s;
+        overflow: hidden;
+        margin-left: -300px;
+
+        @include respond($mobile767) {
+          width: 150px;
+        }
+
+        span {
+          font-size: .8em;
+          display: inline-block;
+          padding: 10px 0 0;
+        }
+
+        &.active {
+          margin-left: 0;
+          opacity: 1;
+        }
+      }
+    }
+
+    .productsWrap {
+      width: 90%;
+      max-width: 1200px;
+      height: 300px;
+      padding: 0 30px;
+      margin: -200px auto 0;
+      border-radius: 60px;
+      border: 3px dashed #aaa;
+      background: rgba($color: white, $alpha: 0.6);
+      position: relative;
+      transition: all .5s;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30px;
+        border-color: transparent transparent rgba($color: white, $alpha: .7) transparent;
+        z-index: -1;
+      }
+
+      .pdmore {
+        height: 35px;
+        margin: 10px auto;
+        line-height: 35px;
+        position: relative;
+        text-align: center;
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          .more {
+            position: absolute;
+            top: 0;
+            line-height: 25px;
+            opacity: 0;
+          }
+
+          &:hover {
+            .more {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .productsBox {
+        width: 95%;
+        height: 250px;
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all .7s;
+
+        &.active {
+          opacity: 1;
+        }
+
+        .pBox {
+          width: calc(100% / 6);
+          height: 100%;
+          padding: 0 20px;
+          box-sizing: border-box;
+          text-align: center;
+          position: relative;
+
+          @include respond($mobile767) {
+            width: calc(100% / 3);
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            >img {
+              max-width: 120px;
+              position: absolute;
+              bottom: 100px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            .textBox {
+              height: 100px;
+              position: absolute;
+              bottom: 0;
+
+              p {
+                text-align: left;
+                font-size: .8em;
+              }
+            }
+          }
+
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6) {
+            @include respond($mobile767) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .ribbonButton {
+    margin-top: 100px;
+
+    .rnbWrap {
+      overflow: hidden;
+      width: 90%;
+      margin: 70px auto;
+
+      .rnbSlideWrap {
+        width: 200%;
+        display: flex;
+
+        .rnbContent {
+          width: 25%;
+          height: 360px;
+          box-sizing: border-box;
+          padding: 5px;
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+
+          @include respond($mobile767) {
+            height: 330px;
+          }
+
+          @include respond($mobile480) {
+            height: 270px;
+          }
+
+          .rnbBox {
+            width: 100%;
+            max-width: 250px;
+            height: 100%;
+            background: white;
+            border: 1px solid white;
+            box-sizing: border-box;
+
+            >a {
+              width: 100%;
+              height: 100%;
+              display: block;
+
+              >.imgBox {
+                width: 100%;
+                height: 60%;
+                background: white;
+                text-align: center;
+                position: relative;
+                background-position: center top;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &.ribbon01 {
+                  background-image: url(../images/ribbon01.png);
+                  background-color: rgba($color:$bgcolor, $alpha: .8);
+                }
+
+                @for $button from 1 through 7 {
+                  &.button0#{$button} {
+                    background-image: url(../images/button0#{$button}.png);
+                  }
+                }
+
+                .hoverImg {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  background-size: cover;
+                  background-position: center center;
+                  opacity: 0;
+
+                  @for $buttonD from 1 through 7 {
+                    &.buttonD0#{$buttonD} {
+                      background-image: url(../images/button0#{$buttonD}_detail.png);
+                    }
+                  }
+
+                  &.ribbonD01 {
+                    background-image: url(../images/ribbon01_detail.jpg);
+                  }
+                }
+              }
+
+              >.textBox {
+                height: 35%;
+                padding: 0 15px;
+                box-sizing: border-box;
+
+                @include respond($mobile480) {
+                  height: 40%;
+                  padding: 0 5px;
+                }
+
+                p {
+                  font-size: .8em;
+                }
+
+                span {
+                  font-size: .7em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      width: 95%;
+      height: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .leftBtn {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover {
+          left: -10px;
+        }
+      }
+
+      .rightBtn {
+        height: 100%;
+        right: 0;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover {
+          right: -10px;
+        }
+      }
+    }
+
+    .pager {
+      width: 200px;
+      height: 30px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #555;
+        border-radius: 50%;
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+        box-sizing: border-box;
+
+        p {
+          width: 22px;
+          height: 22px;
+          border: 1px dashed#333;
+          border-radius: 50%;
+          box-sizing: border-box;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &.active {
+          background: #555;
+
+          p {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// footer
+footer {
+  background: rgba($color: #aaa, $alpha: 0.1);
+
+  .footerWrap {
+    padding: 30px 20px;
+    box-sizing: border-box;
+
+    #toTop {
+      width: 70px;
+      height: 45px;
+      background: #333;
+      border-radius: 15px 15px 0 0;
+      position: absolute;
+      top: -45px;
+      right: 0;
+      text-align: center;
+
+      a {
+        width: 85%;
+        height: 85%;
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        color: white;
+        line-height: 40px;
+        border: 1px dashed #aaa;
+        border-radius: 12px 12px 0 0;
+      }
+    }
+
+    .footerMenu {
+      >ul {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        >li {
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            font-size: .9em;
+          }
+
+          &:hover {
+            a {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .infoWrap {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 0;
+      font-size: .9em;
+
+      @include respond($mobile767) {
+        flex-wrap: wrap;
+        justify-content: left;
+      }
+
+      .storeInfo,
+      .companyInfo {
+        width: 50%;
+        padding: 20px 0;
+
+        @include respond($mobile767) {
+          width: 100%;
+          border-bottom: 1px dashed #ccc;
+        }
+
+        p {
+          padding: 10px 0 20px;
+
+          @include respond($mobile767) {
+            padding: 10px 0;
+          }
+        }
+      }
+
+      .companyInfo {
+        .sns {
+          margin: 10px 0;
+
+          li {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin-right: 20px;
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: block;
+              background-position: center center;
+              background-size: contain;
+              background-repeat: no-repeat;
+
+              &.insta {
+                background-image: url(../images/instagram.svg);
+              }
+
+              &.blog {
+                background-image: url(../images/naverblog.svg);
+              }
+
+              &.youtube {
+                background-image: url(../images/youtube.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footerBottom {
+      .footUtil {
+        font-size: .9em;
+
+        li {
+          float: left;
+          padding: 0 10px;
+          margin-bottom: 20px;
+          position: relative;
+
+          &::after {
+            content: "/";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -2px;
+            color: #aaa;
+          }
+
+          &:first-child {
+            padding: 0 10px 0 0;
+          }
+
+          &:last-child::after {
+            display: none;
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            box-sizing: border-box;
+            border-bottom: 1px solid transparent;
+            transition: .2s;
+
+            &:hover {
+              border-bottom: 1px solid #777;
+            }
+
+            &.policy {
+              color: goldenrod;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        font-size: .8em;
+
+        span {
+          &::after {
+            content: "/";
+            display: inline-block;
+            margin: 0 5px;
+            color: #aaa;
+          }
+
+          &:first-child::before {
+            content: "/";
+            display: inline-block;
+            margin: 0 5px;
+            color: #aaa;
+          }
+        }
+
+        .copy {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

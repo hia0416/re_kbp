@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Noto sans KR";
+  src: url(../fonts/NotoSansKR-Regular.otf) format("otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Fahkwang";
+  src: url(../fonts/Fahkwang-Light.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Fahkwang";
+  src: url(../fonts/Fahkwang-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(../fonts/RobotoSlab-SemiBold.ttf);
+  font-weight: 700;
+}
+.loginBox {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+.loginBox h2 {
+  height: 100px;
+  text-align: center;
+  margin-top: 50px;
+}
+.loginBox form {
+  padding: 5px;
+}
+.loginBox form input {
+  width: 100%;
+  height: 40px;
+  border: 0 none;
+  border-bottom: 1px solid #111;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px 0;
+  background-color: unset;
+}
+.loginBox form input:focus {
+  outline: none;
+}
+.loginBox form button {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: unset;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.loginBox form button:hover {
+  background: #333;
+  border: 2px dashed #aaa;
+  color: white;
+}
+.loginBox .loginMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8em;
+  margin-top: 10px;
+  text-align: center;
+}
+.loginBox .loginMenu li {
+  width: 30%;
+}
+.loginBox .loginMenu li:hover a {
+  font-weight: bold;
+}

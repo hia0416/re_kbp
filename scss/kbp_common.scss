@@ -1,0 +1,32 @@
+$bgcolor:#f2ede4;
+$tabwidth:1023px;
+$mobile767:767px;
+$mobile480:480px;
+$mobile360:360px;
+
+@mixin respond($mobile){
+  @media screen and (max-width:$mobile) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: "Noto sans KR";
+  src: url(../fonts/NotoSansKR-Regular.otf) format('otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Fahkwang";
+  src: url(../fonts/Fahkwang-Light.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Fahkwang";
+  src: url(../fonts/Fahkwang-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url(../fonts/RobotoSlab-SemiBold.ttf);
+  font-weight: 700;
+}

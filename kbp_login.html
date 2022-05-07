@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/kbp_style.css">
+  <link rel="stylesheet" href="./css/kbp_login.css">
+  <!-- js -->
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      $("#header").load('kbp_header.html');
+      $("#footer").load('kbp_footer.html');
+    })
+  </script>
+</head>
+
+<body>
+  <header id="header"></header>
+  <div id="container">
+    <div class="loginBox">
+      <h2>Sign In</h2>
+      <form action="">
+        <input type="text" class="id" placeholder="ID">
+        <input type="password" class="password" placeholder="Password">
+        <button>SIGN IN</button>
+      </form>
+      <ul class="loginMenu">
+        <li>Find Your <a href="#">ID</a></li>Or
+        <li><a href="#">Password</a></li>
+        <li><a href="#">Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+</body>
+
+</html>
