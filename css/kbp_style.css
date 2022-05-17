@@ -59,7 +59,7 @@ body {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
-  right: 0;
+  right: 5%;
   top: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -360,8 +360,8 @@ header nav #nav > li > a {
 @media screen and (max-width: 1023px) {
   header nav #nav > li > a {
     padding-bottom: 0;
-    line-height: 50px;
-    font-size: 1.2em;
+    line-height: 40px;
+    font-size: 1em;
     text-indent: 10px;
   }
 }
@@ -504,7 +504,8 @@ header nav .mobileBottom .mobileBottomInfo p {
 }
 @media screen and (max-width: 767px) {
   #mainBanner {
-    height: 50vh;
+    height: 60vh;
+    padding-top: 70px;
   }
 }
 #mainBanner .videoBox {
@@ -521,7 +522,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 }
 #mainBanner .videoBox video {
   width: 100vw;
-  min-width: 700px;
+  min-width: 800px;
   position: absolute;
   top: 100px;
   left: 50%;
@@ -598,7 +599,7 @@ header nav .mobileBottom .mobileBottomInfo p {
   display: block;
 }
 #contents .newIn .newContent .contentImg a img {
-  width: 100%;
+  width: 95%;
   max-width: 250px;
   position: absolute;
   right: 0;
@@ -608,7 +609,7 @@ header nav .mobileBottom .mobileBottomInfo p {
   height: 200px;
   position: absolute;
   top: 35%;
-  left: -20px;
+  left: -10px;
   background-size: cover;
   background-position: bottom;
   border-radius: 50%;
@@ -669,7 +670,7 @@ header nav .mobileBottom .mobileBottomInfo p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 15px 0;
 }
 #contents .newIn .pWideBox .pBox {
@@ -849,7 +850,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 }
 @media screen and (max-width: 767px) {
   #contents .fabrics > .arrow {
-    top: 100px;
+    top: 60px;
     width: 90%;
     right: 50%;
     -webkit-transform: translateX(50%);
@@ -1021,13 +1022,15 @@ header nav .mobileBottom .mobileBottomInfo p {
   opacity: 1;
 }
 #contents .fabrics .productsWrap {
-  width: 90%;
+  width: 98%;
   max-width: 1200px;
   height: 300px;
   padding: 0 30px;
   margin: -200px auto 0;
   border-radius: 60px;
   border: 3px dashed #aaa;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background: rgba(255, 255, 255, 0.6);
   position: relative;
   -webkit-transition: all 0.5s;
@@ -1054,6 +1057,12 @@ header nav .mobileBottom .mobileBottomInfo p {
   line-height: 35px;
   position: relative;
   text-align: center;
+  right: 0;
+}
+@media screen and (max-width: 767px) {
+  #contents .fabrics .productsWrap .pdmore.moreBox {
+    top: 0;
+  }
 }
 #contents .fabrics .productsWrap .pdmore a {
   display: block;
@@ -1092,7 +1101,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 #contents .fabrics .productsWrap .productsBox .pBox {
   width: calc(100% / 6);
   height: 100%;
-  padding: 0 20px;
+  margin: 0 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
@@ -1101,6 +1110,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 @media screen and (max-width: 767px) {
   #contents .fabrics .productsWrap .productsBox .pBox {
     width: calc(100% / 3);
+    margin: 0 10px;
   }
 }
 #contents .fabrics .productsWrap .productsBox .pBox a {
@@ -1110,6 +1120,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 }
 #contents .fabrics .productsWrap .productsBox .pBox a > img {
   max-width: 120px;
+  width: 100%;
   position: absolute;
   bottom: 100px;
   left: 50%;

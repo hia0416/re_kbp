@@ -15,7 +15,7 @@ $(function () {
     },500)
   })
 
-  $(".langBtn").on('click',function(){
+  $(".langBtn").off().on('click',function(){
     $(".lang").slideToggle();
   })
   $(".m_lang").on('click',function(){
