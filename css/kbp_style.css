@@ -783,7 +783,7 @@ header nav .mobileBottom .mobileBottomInfo p {
 }
 #contents .bedding .beddingWrap .beddingContent a .boxCover {
   width: 100%;
-  height: 20%;
+  height: 26%;
   max-width: 200px;
   overflow: hidden;
   position: absolute;
@@ -815,6 +815,9 @@ header nav .mobileBottom .mobileBottomInfo p {
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
     padding: 0;
   }
+}
+#contents .bedding .beddingWrap .beddingContent a .boxCover .pName {
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 1023px) {
   #contents .bedding .beddingWrap .beddingContent a .boxCover .pName {

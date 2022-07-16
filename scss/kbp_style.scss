@@ -744,13 +744,8 @@ header {
       justify-content: space-around;
       padding: 50px 0;
       flex-wrap: wrap;
-
       @include respond($tabwidth) {
         justify-content: flex-start;
-      }
-
-      @include respond($mobile767) {
-        // justify-content: space-around;
       }
 
       .beddingContent {
@@ -758,13 +753,11 @@ header {
         height: 300px;
         max-width: 200px;
         position: relative;
-
         @include respond($tabwidth) {
           width: 45%;
           margin: 2%;
           max-width: none;
         }
-
         @include respond($mobile767) {
           width: 100%;
         }
@@ -780,11 +773,9 @@ header {
             max-width: 200px;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
-
             @include respond($mobile767) {
               margin-left: 5%;
             }
-
             @include respond($mobile360) {
               margin-left: 0;
             }
@@ -798,7 +789,7 @@ header {
 
           .boxCover {
             width: 100%;
-            height: 20%;
+            height: 26%;
             max-width: 200px;
             overflow: hidden;
             position: absolute;
@@ -806,7 +797,6 @@ header {
             border-radius: 0 0 20px 20px;
             background: rgba($color: #000000, $alpha: 0.35);
             transition: .7s;
-
             @include respond($tabwidth) {
               background: none;
               left: 50%;
@@ -819,7 +809,6 @@ header {
               color: #eee;
               padding: 10px;
               transition: .5s;
-
               @include respond($tabwidth) {
                 color: #333;
                 text-shadow: 0 1px 2px rgba($color: #fff, $alpha: 0.5);
@@ -828,6 +817,7 @@ header {
             }
 
             .pName {
+              margin-bottom: 20px;
               @include respond($tabwidth) {
                 padding-top: 90%;
               }
@@ -870,7 +860,6 @@ header {
       position: absolute;
       top: 50px;
       right: 20%;
-
       @include respond($mobile767) {
         top: 60px;
         width: 90%;
