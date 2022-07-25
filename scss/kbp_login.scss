@@ -5,6 +5,9 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 200px 0;
+  @include respond($mobile767) {
+    padding: 150px 0;
+  }
   h2 {
     height: 100px;
     text-align: center;
